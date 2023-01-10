@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.form{
+    background-color: beige;
+    width: 400px;
+    height: 450px;
+    margin: auto;
+    margin-top: 50px;
+
+}
+
+.form h2{
+    padding: 30px;
+}
+
+
+
+.form input{
+    display: block;
+    margin: 20px 50px;
+    height: 35px;
+    width: 260px;
+    border: none;
+    border-radius: 20px;
+    
+}

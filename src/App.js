@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Auth from "./components/auth";
+import Dashboard from "./components/dashboard/Dashboard";
+import Signin from "./components/authentication/signin/Signin";
+import Signup from "./components/authentication/signup/Signup";
+import  {useUserContext}  from "./context/userContext";
+import { Route, Router, Routes,  } from "react-router-dom";
+
 
 function App() {
+  const { user, loading, error } = useUserContext();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {error && <p className="error">{error}</p>}
+      {loading ? <h2>Loading...</h2> : <> {user ? <Dashboard /> : <Auth />} </>}
+
+      {/* <Routes>
+            <Route path="" element={<Signin />} />
+            <Route path="/singup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            
+        </Routes> */}
+
     </div>
   );
 }
