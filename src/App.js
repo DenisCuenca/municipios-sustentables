@@ -7,9 +7,12 @@ import Signup from "./components/authentication/signup/Signup";
 import Dashboard from "./components/dashboard/Dashboard";
 
 function App() {
-  const { user, loading, error } = useUserContext();
+  const { user, error } = useUserContext();
   
 
+  const islogged = "/panel";
+  const notlogged = "/signin";
+  
 
   const router = createBrowserRouter([
    
@@ -18,7 +21,7 @@ function App() {
       element: 
       <>
       <h1>Bienvenido a landingPage</h1>
-      <Link to = "/signin">ingresar</Link>
+      <Link to = {user ? islogged : notlogged}>ingresar</Link>
       </>
     },
     {

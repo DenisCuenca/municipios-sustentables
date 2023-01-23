@@ -54,9 +54,9 @@ export const UserContextProvider = ({ children }) => {
       .finally(() => setLoading(false));
   };
 
-  const signInUser = (email, password) => {
+  async function signInUser (email, password) {
     setLoading(true);
-    signInWithEmailAndPassword(auth, email, password)
+    await signInWithEmailAndPassword(auth, email, password)
       .then((res) => console.log(res))
       .catch((err) => setError(err.code))
       .finally(() => setLoading(false));
