@@ -12,7 +12,7 @@ import {
 import { auth, db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { async } from "@firebase/util";
-
+import { useNavigate } from "react-router-dom";
 
 
 export const UserContext = createContext({});
@@ -63,7 +63,11 @@ export const UserContextProvider = ({ children }) => {
   };
 
   const logoutUser = () => {
+
+
+    // const navigate = useNavigate()
     signOut(auth);
+    // navigate("/")
   };
 
   const forgotPassword = (email) => {

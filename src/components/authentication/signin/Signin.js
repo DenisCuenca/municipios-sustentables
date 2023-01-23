@@ -1,11 +1,13 @@
 import { useRef } from "react";
 import { useUserContext } from "../../../context/userContext";
 // import "./signIn.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const emailRef = useRef();
   const psdRef = useRef();
+
+  const navigate = useNavigate()
 
   const { signInUser, forgotPassword } = useUserContext();
 
@@ -14,8 +16,20 @@ const Signin = () => {
     const email = emailRef.current.value;
     const password = psdRef.current.value;
 
-    if (email && password) signInUser(email, password);
-  };
+    try {
+      if (email && password) {
+        signInUser(email, password);
+        navigate("/panel");
+      }
+      
+    } catch (e) {
+      alert("error: ", e);
+      
+    }
+  }
+
+    
+  
 
   const forgotPasswordHanddler = () => {
     const email = emailRef.current.value;
@@ -37,7 +51,8 @@ const Signin = () => {
             <button type="submit">Ingresar</button>
             
             {/* <p onClick={forgotPasswordHanddler}>¿Olvidate tu contraseña?</p> */}
-            <Link to= "reset-password/">¿Olvidate tu contraseña?</Link>
+            <Link to= "/reset-password/">¿Olvidate tu contraseña?</Link>
+            <Link to= "/signup/">Crear Cuenta</Link>
 
           </form>
         </div>

@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import { useUserContext } from "../../../context/userContext";
-
+import { Link , useNavigate} from "react-router-dom";
 const Signup = () => {
+
+  const navigate = useNavigate();
+
   const nameRef = useRef();
   const countryRef = useRef();
   const cityRef = useRef();
@@ -12,22 +15,30 @@ const Signup = () => {
   
 
   const { registerUser, addDocUser } = useUserContext();
-
+  
   const onSubmit = (e) => {
     e.preventDefault();
-    const name = nameRef.current.value;
-    const country = countryRef.current.value;
-    const city = cityRef.current.value;
-    const email = emailRef.current.value;
-    const phone = phoneRef.current.value;
-    const password = psdRef.current.value;
-    const re_password = repasswordRef.current.value;
     
-    
-    if (email && name && password && password) {
-      registerUser(email, name, password);
-      addDocUser(name, country, city, email, phone);
+    try{
+      const name = nameRef.current.value;
+      const country = countryRef.current.value;
+      const city = cityRef.current.value;
+      const email = emailRef.current.value;
+      const phone = phoneRef.current.value;
+      const password = psdRef.current.value;
+      const re_password = repasswordRef.current.value;
+
+      if (email && name && password && password) {
+        registerUser(email, name, password);
+        addDocUser(name, country, city, email, phone);
+        navigate("/panel")
+        
+      }
+
+    }catch(e){
+        alert("error: ", e)
     }
+    
   };
 
   return (
@@ -52,6 +63,7 @@ const Signup = () => {
         <label>Repetir Contraseña:</label>
         <input placeholder="contraseña" type="password" ref={repasswordRef} />
         <button type="submit">Ingresar</button>
+        Ya tienes una cuenta? <Link to= "/signin/">Ingresar</Link>
       </form>
     </div>
     </div>
