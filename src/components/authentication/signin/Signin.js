@@ -11,23 +11,26 @@ const Signin = () => {
 
   const { signInUser, forgotPassword } = useUserContext();
 
-  const onSubmit = (e) => {
+  async function onSubmit (e){
+
     e.preventDefault();
+
     const email = emailRef.current.value;
     const password = psdRef.current.value;
 
-    try {
-      if (email && password) {
-        signInUser(email, password);
-        navigate("/panel");
-      }
-      
-    } catch (e) {
-      alert("error: ", e);
-      
-    }
-  }
+    if (email && password) {
 
+    try {
+      await signInUser(email, password);
+      navigate("/panel");
+        
+      } catch (err) {
+        navigate("/signin");
+        
+      }
+    }
+    
+  }
     
   
 
