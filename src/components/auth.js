@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Signup from './authentication/signup/Signup';
 import Signin from './authentication/signin/Signin';
 import  ResetPassword from './authentication/resetPassword/ResetPassword';
+import LandingPage from './landing_page/Landing_page';
 import {
     createBrowserRouter,
     RouterProvider,
@@ -24,11 +25,15 @@ const Auth = ()  => {
             path: "/reset-password/",
             element: <ResetPassword/>,
           },
+          {
+            path: "/landing-page/",
+            element: <LandingPage/>,
+          },
       ]);
     
     return (
         
-      <div className='container'>
+      <div className=''>
 
         <RouterProvider router={router} />
         
