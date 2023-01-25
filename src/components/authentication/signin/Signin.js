@@ -41,7 +41,7 @@ const Signin = () => {
   };
 
   return (
-    <>
+ 
       <div>
         <h4>Bienvenido a MUNICIPIOS SUSTENTABLES</h4>
         <div className="form">
@@ -60,7 +60,6 @@ const Signin = () => {
           </form>
         </div>
       </div>
-    </>
   );
 };
 

@@ -1,0 +1,547 @@
+*{
+	padding: 0;
+	margin: 0;
+    box-sizing: border-box;
+  
+}
+body{
+	background: rgba(215, 211, 211, 0.3);
+	font-family: 'Poppins', sans-serif;
+}
+.conte{
+
+	margin: 0 ;
+	display: grid;
+	grid-gap: 0px;
+	grid-template-columns: repeat(3, 1fr);
+
+	grid-template-rows: repeat28, auto3;
+	grid-template-areas: "header  header header"
+						 "slider slider slider"
+						 "titulo1 titulo1 titulo1"
+						 "adopta1 adopta2 adopta3"
+						 "titulo2 titulo2 titulo2"
+						 "doctor doctor doctor"	
+						 "objetivo objetivo objetivo"
+						 "sponsor sponsor sponsor"
+						 "footer footer footer";	
+}
+/*---------------------------------------------*/
+/*                  header                     */
+/*---------------------------------------------*/
+.conte .cabeceraPrincipal{
+	grid-area: header;
+	background-color: #EEF0F4;
+	display: flex;
+	justify-content: space-between
+}
+.conte .cabeceraPrincipal .logotipo{
+	padding: 10px 40px;
+}
+
+/*---------------------------------------------*/
+/*              menuPrincipal                  */
+/*---------------------------------------------*/
+.conte .cabeceraPrincipal .menuPrincipal{
+	display: flex;
+	align-items: center;
+}
+.menuPrincipal a{
+	text-decoration: none;
+	padding: 2px 20px;
+	transition-duration: 0.4s;
+	color: #000000;	
+	border-radius: 10px;
+}
+.menuPrincipal a:hover{
+	background-color: #144759;
+	color: #fff;
+}
+
+.conte .cabeceraPrincipal .menuPrincipal2{
+	display: flex;
+	align-items: center;
+}
+.menuPrincipal2 a{
+	text-decoration: none;
+	padding: 0 20px;
+	transition-duration: 0.4s;
+	color: #000000;		
+}
+
+
+/*---------------------------------------------*/
+/*             Slider principal                */
+/*---------------------------------------------*/
+.conte .sliderPrincipal{
+	grid-area: slider;
+	background-color: #fff;
+}
+.conte .sliderPrincipal img{
+	width: 100%;
+	height: auto;
+}
+
+.sliderPrincipal{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.texto-encima{
+    position: absolute;
+    top: 28%;
+    left: 10px;
+    color: #fff;
+    font-size: 80px;
+    text-shadow: 1px 1px 3px  black, 0 0 25px black;
+    margin-left: 40px;
+    text-align: left;
+   
+   
+}
+.texto-encima1{
+    position: absolute;
+    top: 65%;
+    left: 10px;
+    color: #fff;
+    font-size: 23px; 
+    margin-left: 40px;
+    text-align: left;
+}
+.botonesPortada{
+    position: absolute;
+    top: 560px;
+    left: 10px;
+    color: #fff;
+    font-size: 25px;
+    margin-left: 40px; 
+}
+.botonesPortada a{
+  margin: 3px;
+}
+
+
+/*---------------------------------------------*/
+/*                 Cards fotos                 */
+/*---------------------------------------------*/
+.conte .titulo{
+	grid-area: titulo1;
+	text-align: center;
+	background-color: white;
+	padding: 30px 0px 160px ;
+
+  position: relative;
+
+}
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+   
+}
+
+.container .card{
+    width: 330px;
+    height: 590px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    transition: all 0.25s;
+}
+
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container .card img{
+    width: 330px;
+    height: 320px;
+}
+
+
+.container .card h3{
+    font-weight: 200;
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.container .card p{
+    padding: 0 1rem;
+    font-weight: 20;
+    text-align: left;
+    font-size: 14px;
+   
+}
+
+.container .card a{
+  background-color: #144759; 
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 9px;
+}
+
+.container .card a:hover{
+  background-color: #0D4B05;
+  color: white;
+}
+
+/*---------------------------------------------*/
+/*              Slider(carusel)                */
+/*---------------------------------------------*/
+.slide{
+	margin-top: 10px;
+	grid-area: doctor;
+  position: relative;
+}
+
+.slide h3{
+  text-align: center;
+  top: -600px;
+  left: 307px;
+  position: absolute;
+  font-size: 30px;
+}
+.slide h6{
+  text-align: left;
+  top: -430px;
+  left: 20px;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 400;
+}
+.slide p{
+  text-align: left;
+  top: -270px;
+  left: 20px;
+  position: absolute;
+  font-size: 20px;
+  font-weight: 10;
+}
+.slide .sli{
+  text-align: right;
+  top: -430px;
+  left: 760px;
+  position: absolute;
+
+}
+
+
+/*---------------------------------------------*/
+/*               Objetivo               */
+/*---------------------------------------------*/
+.conte .objetivo{
+	grid-area: objetivo;
+	background-color: #E2E6E7;
+  height: 570px;
+  position: relative;
+}
+.conte .objetivo .centro {
+	text-align: center;
+	font-size: 35px;
+	padding: 3em ;
+	color: black;
+  font-family: Poppins(Light);
+}
+.conte .objetivo .tema{
+    top: 200px;
+    left: 710px;
+    position: absolute;
+    color: black;
+    font-size: 22px;
+    font-family: poppins;
+    font-weight: 100;
+}
+
+.conte .objetivo .imag{
+    top: 100px;
+    left: 140px;
+    position: absolute;
+    font-size: 25px;
+   
+}
+
+.conte .objetivo .botonesObjetivo{
+    top: 330px;
+    left: 780px;
+    position: absolute;
+    display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.botonesObjetivo a{
+  margin: 20px;
+  font-family: poppins(Thin);
+}
+
+
+/*---------------------------------------------*/
+/*                  Sponsors                   */
+/*---------------------------------------------*/
+.conte .sponsor{
+	grid-area: sponsor;
+	background-color: #ffff;
+	text-align: center;
+	padding: 3.2em 0;
+
+}
+.conte .sponsor .centro1 {
+  color: white;
+  font-size: 25px;
+  padding: 0.5em 3em 1em ;
+  color: #144759;
+}
+
+
+.conte .imagenes img{
+margin: 20px 80px;
+padding: 0px 10px  50px 40px;
+
+}
+
+/*---------------------------------------------*/
+/*                 Pie Pagina                  */
+/*---------------------------------------------*/
+
+.conte .piePagina{
+  grid-area: footer;
+  background-color: #fff;
+}
+.conte .piePagina img{
+  width: 100%;
+  height: 100%;
+}
+.piePagina{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+.texto-encima11{
+    position: absolute;
+    top: 60px;
+    left: 90px;
+   padding: 1em;
+    color: white;
+    font-family: poppins(Thin);  
+    margin: 10px;
+    font-size: 1.1em;
+    text-align: left;
+    font-weight: 20;
+}
+
+.texto-encima22{
+    position: absolute;
+    top: 75px;
+    left: 650px;
+   padding: 1em;
+    color: white;
+    font-size: 1.1em;
+    font-family: poppins(Thin);
+    font-weight: 20;
+    text-align: left;  
+}
+
+.texto-encima33{
+    position: absolute;
+    top: 70px;
+    left: 1250px;
+    padding: 0 25px;
+    color: white;
+}
+.texto-encima33 a{
+    font-size: 30px;
+    padding: 0 10px;
+    color: white;
+}
+
+.centrado22{
+    position: absolute;
+    top: 93%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: poppins(Light);
+    color: white;
+    font-size: 0.1em;
+}
+
+
+
+/*---------------------------------------------*/
+/*                Personalizados               */
+/*---------------------------------------------*/
+.colorAzul{
+	color: #000;
+	font-size: 30px;
+	padding: 15px 0px;
+	margin: 15px;
+}
+
+
+.espacio{
+	padding: 2em 0;
+}
+
+.centrado{
+	text-align: center;
+}
+/*---------------------------------------------*/
+/*                   Botones                  */
+/*---------------------------------------------*/
+
+
+ 
+ /* BOTONES DEL MENU */
+.botonMenu1 {
+  background-color: #fff; 
+  border: none;
+  color: #000;
+  padding: 18px 42px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.botonMenu1:hover {
+  background-color: #119EA9;
+  color: #fff;
+}
+
+.botonMenu2 {
+  background-color: #144759; 
+  border: none;
+  color: white;
+  padding: 18px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.botonMenu2:hover {
+  background-color: #0D4B05;
+  color: white;
+}
+
+/* BOTONES DE LA PORTADA*/
+.botonPortada1 {
+  background-color: #fff; 
+  border: none;
+  color: #000;
+  padding: 15px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.botonPortada1:hover {
+  background-color: #119EA9;
+  color: #fff;
+}
+
+.botonPortada2 {
+  background-color: #144759; 
+  border: none;
+  color: white;
+  padding: 15px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.botonPortada2:hover {
+  background-color: #0D4B05;
+  color: #fff;
+}
+
+/* BOTONES DE OBJETIVO*/
+.botonObjetivo1 {
+  background-color: #144759; 
+  border: none;
+  color: white;
+  padding: 10px 27px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.botonObjetivo1:hover {
+  background-color: #0D4B05;
+  color: #fff;
+}
+
+.botonObjetivo2 {
+  background-color: #144759;
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.botonObjetivo2:hover {
+  background-color: #0D4B05;
+  color: #fff;
+}
+.botonObjetivo3 {
+  background-color: #144759; 
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.botonObjetivo3:hover {
+  background-color: #0D4B05;
+  color: #fff;
+}
+
+
+
+
+
+
