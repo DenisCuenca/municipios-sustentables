@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useUserContext } from "../../../context/userContext";
-// import "./signIn.css"
+import "./estilo1.css"
 import { Link } from "react-router-dom";
 
 const Signin = () => {
@@ -25,22 +25,35 @@ const Signin = () => {
 
   return (
     <>
-      <div>
-        <h4>Bienvenido a MUNICIPIOS SUSTENTABLES</h4>
-        <div className="form">
-          <h2> Login </h2>
-          <form onSubmit={onSubmit}>
-            <label>Ingresa tu email:</label>
-            <input placeholder="Email" type="email" ref={emailRef} />
-            <label>Ingresa tu cotraseña:</label>
-            <input placeholder="Password" type="password" ref={psdRef} />
-            <button type="submit">Ingresar</button>
-            
-            {/* <p onClick={forgotPasswordHanddler}>¿Olvidate tu contraseña?</p> */}
-            <Link to= "reset-password/">¿Olvidate tu contraseña?</Link>
-
-          </form>
-        </div>
+      <div class="contenedor">
+                                 
+                  
+                        
+                   <div className="rectangulo">     
+                   
+                         <h1 className="Titulo1">Bienvenido a MUNICIPIOS SUSTENTABLES</h1> 
+                                               
+                        
+                        <h2 className="Titulo2"> Login </h2>        
+                        <form  onSubmit={onSubmit}>
+                          
+                          <label className="label1">Ingresa tu email:</label>
+                          <input placeholder="Email" type="email" ref={emailRef} />
+                          <label className="label2">Ingresa tu cotraseña:</label>
+                          <input placeholder="Password" type="password" ref={psdRef} />
+                         
+                          <Link to= "reset-password/">¿Olvidate tu contraseña?</Link>       
+                           
+                          <button className="boton" type="submit">Ingresar</button>
+                          
+                          
+                        </form>
+                        
+                        
+                           
+                        
+                  </div>
+                 
       </div>
     </>
   );
