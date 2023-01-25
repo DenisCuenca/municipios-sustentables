@@ -40,6 +40,8 @@ export default function UploadReport() {
   // ( C4 - (MIN($C$4:$C$224))  )  /  (MAX($C$4:$C$224)-MIN($C$4:$C$224))
 
   // ))+1
+
+  
   function formula(d) {
     d.map((item) => {
       Object.keys(item).map((j, n) => {
