@@ -1,6 +1,15 @@
 import "./style.css"
+import { Link } from "react-router-dom";
+import { useUserContext } from "../../context/userContext";
+
+
 function LandingPage() {
 
+  const { user } = useUserContext();
+
+  
+  const isLogged = "/panel";
+  const isNotLogged = "/signin";
 
   return (
     
@@ -17,7 +26,9 @@ function LandingPage() {
         </nav>
         <nav class="menuPrincipal2">
           <a href="/signin/">
-            <button class="botonMenu1">Ingreso</button>
+
+            <button class="botonMenu1"><Link to={ user? isLogged : isNotLogged}>
+            Ingreso</Link></button>
           </a>
           <a href="/signup">
             <button class="botonMenu2">Registro</button>
@@ -43,7 +54,8 @@ function LandingPage() {
         </div>
         <div class="botonesPortada">
           <a href="/">
-            <button class="botonPortada1">INGRESAR</button>
+            <button class="botonPortada1"><Link to={ user? isLogged : isNotLogged}>
+            INGRESAR</Link></button>
           </a>
           <a href="#">
             <button class="botonPortada2">CONOCER MÁS</button>
@@ -167,7 +179,8 @@ function LandingPage() {
 		    <a href="#"><br/>
     	  <button class="botonObjetivo1">Aprender</button></a>
     	  <a href="/signin"><br/>
-    	  <button class="botonObjetivo2">Unete</button></a>  
+    	  <button class="botonObjetivo2"><Link to={ user? isLogged : isNotLogged}>
+            Únete</Link></button></a>  
     	  <a href="#"><br/>
     	  <button class="botonObjetivo3">Apoyo</button></a>    
 		    </div>

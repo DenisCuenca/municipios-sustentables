@@ -5,6 +5,8 @@ import ResetPassword from "./components/authentication/resetPassword/ResetPasswo
 import Signin from "./components/authentication/signin/Signin";
 import Signup from "./components/authentication/signup/Signup";
 import Dashboard from "./components/dashboard/Dashboard";
+import LandingPage from "./components/landing_page/Landing_page";
+import { UserContext } from "./context/userContext";
 
 function App() {
   const { user, error } = useUserContext();
@@ -18,11 +20,8 @@ function App() {
    
     {
       path: "/",
-      element: 
-      <>
-      <h1>Bienvenido a landingPage</h1>
-      <Link to = {user ? islogged : notlogged}>ingresar</Link>
-      </>
+      element: <LandingPage/>
+      
     },
     {
       path: "/signin",
