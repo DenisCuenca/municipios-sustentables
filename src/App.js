@@ -7,6 +7,7 @@ import Signup from "./components/authentication/signup/Signup";
 import Dashboard from "./components/dashboard/Dashboard";
 import LandingPage from "./components/landing_page/Landing_page";
 
+
 function App() {
   const { user, error } = useUserContext();
   
@@ -19,8 +20,8 @@ function App() {
    
     {
       path: "/",
-      element: 
-      <LandingPage/>
+      element: <LandingPage/>
+      
     },
     {
       path: "/signin",
