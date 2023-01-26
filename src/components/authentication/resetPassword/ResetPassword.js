@@ -2,8 +2,9 @@ import React, { useRef } from "react";
 import { useUserContext } from "../../../context/userContext";
 import toast, { Toaster } from "react-hot-toast";
 import { async } from "@firebase/util";
-
+import "./estilos2.css"
 import { useNavigate, Link } from "react-router-dom";
+
 
 function ResetPassword() {
 
@@ -31,18 +32,22 @@ function ResetPassword() {
 
   return (
     <>
-      <Toaster position="top-center" reverseOrder={false} />
-      <div>
-        <h4>Bienvenido a MUNICIPIOS SUSTENTABLES</h4>
-        <div className="form">
-          <h2>Recuperar contraseña:</h2>
-          <form onSubmit={forgotPasswordHanddler}>
-            <label>Email</label>
-            <input placeholder="email" type="email" ref={emailRef} />
-            <button>Enviar</button>
-            <Link to="/signin">Ingresar</Link>
-          </form>
-        </div>
+     <div className="contenedor"> 
+     <Toaster position="top-center" reverseOrder={false} />
+        <div className="rectangulo">        
+                <h1 className="Titulo1">Bienvenido a MUNICIPIOS SUSTENTABLES</h1>
+            
+                <h2 className="Titulo2">Recuperar </h2>
+                <h2 className="Titulo2"> contraseña:</h2>
+                
+                <form onSubmit={forgotPasswordHanddler}>
+                  <label className="label1">Email</label>
+                  <input placeholder="Email" type="email" ref={emailRef} />
+                  <button className="boton">Enviar</button>
+                  <Link to="/signin">Ingresar</Link>
+                </form>
+         </div>
+          
       </div>
     </>
   );

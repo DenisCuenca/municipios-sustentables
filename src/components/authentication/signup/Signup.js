@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useUserContext } from "../../../context/userContext";
+import "./estilo3.css"
 import { Link , useNavigate} from "react-router-dom";
 const Signup = () => {
 
@@ -43,29 +44,31 @@ const Signup = () => {
 
   return (
     <>
-    <div>
-    <h4>Bienvenido a MUNICIPIOS SUSTENTABLES</h4>
-    <div className="form">
-      <h2>Registro</h2>
-      <form onSubmit={onSubmit}>
-        <label>Nombre de empresa:</label>
-        <input placeholder="nombre" type="text" ref={nameRef}/>
-        <label>País:</label>
-        <input placeholder="país" type="text" ref={countryRef} />
-        <label>Ciudad:</label>
-        <input placeholder="ciudad" type="text" ref={cityRef} />
-        <label>Email:</label>
-        <input placeholder="email" type="email" ref={emailRef} />
-        <label>Telefóno:</label>
-        <input placeholder="telefóno" type="number" ref={phoneRef} />
-        <label>Contraseña:</label>
-        <input placeholder="contraseña" type="password" ref={psdRef} />
-        <label>Repetir Contraseña:</label>
-        <input placeholder="contraseña" type="password" ref={repasswordRef} />
-        <button type="submit">Ingresar</button>
-        Ya tienes una cuenta? <Link to= "/signin/">Ingresar</Link>
-      </form>
-    </div>
+    <div className="contenedor">
+    <div className="rectangulo">
+      <h1 className="Titulo1">Bienvenido a MUNICIPIOS SUSTENTABLES</h1>
+      
+        <h2 className="Titulo2">Registro</h2>
+        
+        <form onSubmit={onSubmit}>
+          <label>Nombre de empresa:</label>
+          <input placeholder="nombre" type="text" ref={nameRef}/>
+          <label>País:</label>
+          <input placeholder="país" type="text" ref={countryRef} />
+          <label>Ciudad:</label>
+          <input placeholder="ciudad" type="text" ref={cityRef} />
+          <label>Email:</label>
+          <input placeholder="email" type="email" ref={emailRef} />
+          <label>Telefóno:</label>
+          <input placeholder="telefóno" type="number" ref={phoneRef} />
+          <label>Contraseña:</label>
+          <input placeholder="contraseña" type="password" ref={psdRef} />
+          <label>Repetir Contraseña:</label>
+          <input placeholder="contraseña" type="password" ref={repasswordRef} />
+          <button type="submit">Ingresar</button>
+           Ya tienes una cuenta? <Link to= "/signin/">Ingresar</Link>
+        </form>
+      </div>
     </div>
     </>
   );

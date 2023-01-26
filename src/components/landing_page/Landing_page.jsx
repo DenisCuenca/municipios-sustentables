@@ -16,10 +16,10 @@ function LandingPage() {
           <a href="#sponsor">Sponsor</a>
         </nav>
         <nav class="menuPrincipal2">
-          <a href="/">
+          <a href="/signin">
             <button class="botonMenu1">Ingreso</button>
           </a>
-          <a href="#">
+          <a href="/signup">
             <button class="botonMenu2">Registro</button>
           </a>
         </nav>
@@ -166,7 +166,7 @@ function LandingPage() {
 		    <div class="botonesObjetivo">
 		    <a href="#"><br/>
     	  <button class="botonObjetivo1">Aprender</button></a>
-    	  <a href="/"><br/>
+    	  <a href="/signin"><br/>
     	  <button class="botonObjetivo2">Unete</button></a>  
     	  <a href="#"><br/>
     	  <button class="botonObjetivo3">Apoyo</button></a>    
