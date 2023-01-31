@@ -4,6 +4,7 @@ import * as XLSX from "xlsx";
 import { auth, db } from "../../firebase";
 import { useUserContext } from "../../context/userContext";
 import { addDoc, collection } from "firebase/firestore";
+import Sidebar from "../dashboard/components/Sidebar";
 
 export default function UploadReport() {
   const { user } = useUserContext();
@@ -228,7 +229,9 @@ export default function UploadReport() {
 
   return (
     <>
-      <hr />
+
+
+    <Sidebar/>
       <form onSubmit={handleSubmit}>
         <h5>Upload file: </h5>
         <input

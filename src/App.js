@@ -6,6 +6,7 @@ import Signin from "./components/authentication/signin/Signin";
 import Signup from "./components/authentication/signup/Signup";
 import Dashboard from "./components/dashboard/Dashboard";
 import LandingPage from "./components/landing_page/Landing_page";
+import UploadReport from "./components/reports/UploadReport";
 
 
 function App() {
@@ -38,6 +39,10 @@ function App() {
     {
       path: "/panel/",
       element: <Dashboard />,
+    },
+    {
+      path: "/panel/new-register/",
+      element: <UploadReport />,
     },
   ]);
 
