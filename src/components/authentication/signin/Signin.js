@@ -52,9 +52,9 @@ const Signin = () => {
         <form onSubmit={onSubmit}>
 
           <label >Ingresa tu email:</label>
-          <input placeholder="  Email" type=" email" ref={emailRef} />
+          <input placeholder="  Email" type="email" ref={emailRef} />
           <label >Ingresa tu contraseña:</label>
-          <input placeholder="  Contraseña" type=" password" ref={psdRef} />
+          <input placeholder="  Contraseña" type="password" ref={psdRef} />
           <div className="enlace">
             <Link className="l1"to="/signup/">Crear cuenta nueva </Link>
             <Link className="l1"to="/reset-password/"> ¿Olvidaste tu contraseña? </Link>
