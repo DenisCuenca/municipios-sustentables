@@ -20,24 +20,25 @@ const Signup = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     
+    const name = nameRef.current.value;
+    const country = countryRef.current.value;
+    const city = cityRef.current.value;
+    const email = emailRef.current.value;
+    const phone = phoneRef.current.value;
+    const password = psdRef.current.value;
+    const re_password = repasswordRef.current.value;
+    
     try{
-      const name = nameRef.current.value;
-      const country = countryRef.current.value;
-      const city = cityRef.current.value;
-      const email = emailRef.current.value;
-      const phone = phoneRef.current.value;
-      const password = psdRef.current.value;
-      const re_password = repasswordRef.current.value;
-
       if (email && name && password && password) {
-        registerUser(email, name, password);
+        registerUser(email,  password,name);
         addDocUser(name, country, city, email, phone);
         navigate("/panel")
         
       }
 
-    }catch(e){
-        alert("error: ", e)
+    }catch(error){
+        alert("error: ", error)
+        navigate("/signup")
     }
     
   };

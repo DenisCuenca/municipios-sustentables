@@ -64,9 +64,9 @@ body{
 }
 .menuPrincipal2 a{
 	text-decoration: none;
-	padding: 0 20px;
-	transition-duration: 0.4s;
-	color: #000000;		
+	padding: 0 10px;
+	color: black;
+
 }
 
 
@@ -110,7 +110,7 @@ body{
 }
 .botonesPortada{
     position: absolute;
-    top: 560px;
+    top: 550px;
     left: 10px;
     color: #fff;
     font-size: 25px;
@@ -118,6 +118,8 @@ body{
 }
 .botonesPortada a{
   margin: 3px;
+  text-decoration: none;
+  color: #000;
 }
 
 
@@ -147,7 +149,7 @@ body{
 
 .container .card{
     width: 330px;
-    height: 590px;
+    height: 585px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -189,14 +191,14 @@ body{
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 2px 2px;
+  margin: 2px 18px;
   transition-duration: 0.4s;
   cursor: pointer;
   border-radius: 9px;
 }
 
 .container .card a:hover{
-  background-color: #0D4B05;
+  background-color: #4986cb;
   color: white;
 }
 
@@ -281,12 +283,14 @@ body{
     position: absolute;
     display: flex;
   align-items: center;
-  margin-left: 5px;
+  margin-left: 2px;
 }
 
 .botonesObjetivo a{
   margin: 20px;
   font-family: poppins(Thin);
+  text-decoration: none;
+  color: white;
 }
 
 
@@ -337,11 +341,11 @@ padding: 0px 10px  50px 40px;
     left: 90px;
    padding: 1em;
     color: white;
-    font-family: poppins(Thin);  
+    font-family: poppins;  
     margin: 10px;
     font-size: 1.1em;
     text-align: left;
-    font-weight: 20;
+    font-weight: 100;
 }
 
 .texto-encima22{
@@ -351,8 +355,8 @@ padding: 0px 10px  50px 40px;
    padding: 1em;
     color: white;
     font-size: 1.1em;
-    font-family: poppins(Thin);
-    font-weight: 20;
+    font-family: poppins;
+    font-weight: 5;
     text-align: left;  
 }
 
@@ -386,19 +390,12 @@ padding: 0px 10px  50px 40px;
 /*---------------------------------------------*/
 .colorAzul{
 	color: #000;
-	font-size: 30px;
+	font-size: 33px;
 	padding: 15px 0px;
 	margin: 15px;
 }
 
 
-.espacio{
-	padding: 2em 0;
-}
-
-.centrado{
-	text-align: center;
-}
 /*---------------------------------------------*/
 /*                   Botones                  */
 /*---------------------------------------------*/
@@ -410,7 +407,7 @@ padding: 0px 10px  50px 40px;
   background-color: #fff; 
   border: none;
   color: #000;
-  padding: 18px 42px;
+  padding: 18px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -421,7 +418,7 @@ padding: 0px 10px  50px 40px;
   border-radius: 15px;
 }
 .botonMenu1:hover {
-  background-color: #119EA9;
+  background-color: #a9b7d3;
   color: #fff;
 }
 
@@ -429,7 +426,7 @@ padding: 0px 10px  50px 40px;
   background-color: #144759; 
   border: none;
   color: white;
-  padding: 18px 32px;
+  padding: 18px 35px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -440,11 +437,12 @@ padding: 0px 10px  50px 40px;
   border-radius: 15px;
 }
 .botonMenu2:hover {
-  background-color: #0D4B05;
+  background-color: #2471A3;
   color: white;
 }
 
 /* BOTONES DE LA PORTADA*/
+
 .botonPortada1 {
   background-color: #fff; 
   border: none;
@@ -460,7 +458,7 @@ padding: 0px 10px  50px 40px;
   border-radius: 15px;
 }
 .botonPortada1:hover {
-  background-color: #119EA9;
+  background-color: #a9b7d3;
   color: #fff;
 }
 
@@ -479,7 +477,7 @@ padding: 0px 10px  50px 40px;
   border-radius: 15px;
 }
 .botonPortada2:hover {
-  background-color: #0D4B05;
+  background-color: #4986cb;
   color: #fff;
 }
 
@@ -499,7 +497,7 @@ padding: 0px 10px  50px 40px;
   border-radius: 15px;
 }
 .botonObjetivo1:hover {
-  background-color: #0D4B05;
+  background-color: #4986cb;
   color: #fff;
 }
 
@@ -507,7 +505,7 @@ padding: 0px 10px  50px 40px;
   background-color: #144759;
   border: none;
   color: white;
-  padding: 10px 40px;
+  padding: 10px 23px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -518,7 +516,7 @@ padding: 0px 10px  50px 40px;
   border-radius: 15px;
 }
 .botonObjetivo2:hover {
-  background-color: #0D4B05;
+  background-color: #4986cb;
   color: #fff;
 }
 .botonObjetivo3 {
@@ -536,7 +534,7 @@ padding: 0px 10px  50px 40px;
   border-radius: 15px;
 }
 .botonObjetivo3:hover {
-  background-color: #0D4B05;
+  background-color: #4986cb;
   color: #fff;
 }
 

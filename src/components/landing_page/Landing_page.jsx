@@ -16,7 +16,7 @@ function LandingPage() {
     <div className="conte">
       <header class="cabeceraPrincipal">
         <section class="logotipo">
-          <img src={require("./images/logo.jpg")} />
+          <img src={require("./images/logo1.jpg")} />
         </section>
         <nav class="menuPrincipal">
           
@@ -26,9 +26,8 @@ function LandingPage() {
         </nav>
         <nav class="menuPrincipal2">
           <a href="/signin/">
-
             <button class="botonMenu1"><Link to={ user? isLogged : isNotLogged}>
-            Ingreso</Link></button>
+            Ingreso </Link></button>
           </a>
           <a href="/signup">
             <button class="botonMenu2">Registro</button>
@@ -47,8 +46,8 @@ function LandingPage() {
         </div>
         <div class="texto-encima1">
        <br/> 
-        <p>Lorem lorem Lorem lorem Lorem lorem Lorem<br/>
-		  	lorem Lorem lorem  <br/>
+        <p>Lograr que las ciudades sean más inclusivas,<br/>
+        seguras, resilientes y sostenibles.  <br/>
         </p>	
           
         </div>
@@ -200,26 +199,26 @@ function LandingPage() {
   <img src={require("./images/footer11.jpg")} /> 
 		  <div class="texto-encima11">
 		  <h5>Proyecto Economía</h5>
-		  <p>Lorem lorem Lorem lorem Lorem <br/>
-		  	lorem Lorem lorem Lorem lorem <br/>
-		  	Lorem lorem Lorem lorem Lorem </p>	
+		  <p> Gasto en protección ambiental <br/>
+        Gestión ambiental <br/>
+		  	Comportamiento ambiental </p>	
 		  </div>
 
 		  <div class="texto-encima22">
 		  <h5>Información</h5>
 		  dabravo@utpl.edu.ec<br/>
-			Loja Ecuador <br/>
+			Loja - Ecuador <br/>
 			2190789732 <br/>	
 		  </div>
 
 
 		  <div class="texto-encima33">
 		  	<a href=""><i class="fa-brands fa-facebook"></i></a>
-			<a href=""><i class="fa-brands fa-instagram"></i></a>
-			<a href=""><i class="fa-brands fa-tiktok"></i></a>
+			  <a href=""><i class="fa-brands fa-instagram"></i></a>
+			  <a href=""><i class="fa-brands fa-tiktok"></i></a>
 		  </div>
 
-		  <div class="centrado22">S
+		  <div class="centrado22">
 		  	<h6>Derechos reservados 2022 - 2023</h6>
 		  </div>
 	      </footer>

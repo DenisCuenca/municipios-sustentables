@@ -76,17 +76,21 @@ export const UserContextProvider = ({ children }) => {
 
 
   async function addDocUser(name, country, city, email, phone) {
+    try {
+      await setDoc(doc(db, "users", email), {
+      id: email,
+      displayname: name,
+      email,
+          country,
+          city,
+          phone,
+          CreatedAt: new Date()
+        });
+      
+    } catch (error) {
+      console.log(error)
+    }
     
-       await setDoc(doc(db, "users", email), {
-         id: email,
-          displayname: name,
-        email,
-        country,
-        city,
-        phone,
-        CreatedAt: new Date()
-
-      });
          
   }
 
