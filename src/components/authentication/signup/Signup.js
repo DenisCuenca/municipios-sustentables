@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useUserContext } from "../../../context/userContext";
-import "./estilo3.css"
+import "./signup.css"
 import { Link , useNavigate} from "react-router-dom";
 const Signup = () => {
 
@@ -44,31 +44,36 @@ const Signup = () => {
 
   return (
     <>
-    <div className="contenedor">
-    <div className="rectangulo">
+    <div className="contenedor1">
+    <div className="rectangulo1">
       <h1 className="Titulo1">Bienvenido a MUNICIPIOS SUSTENTABLES</h1>
       
-        <h2 className="Titulo2">Registro</h2>
+        <h2 className="Subtitulo1">Registro</h2>
         
         <form onSubmit={onSubmit}>
-          <label>Nombre de empresa:</label>
-          <input placeholder="nombre" type="text" ref={nameRef}/>
+          <label>Nombres:</label>
+          <input placeholder="  nombre" type="text" ref={nameRef}/>
           <label>País:</label>
-          <input placeholder="país" type="text" ref={countryRef} />
+          <input placeholder="  país" type="text" ref={countryRef} />
           <label>Ciudad:</label>
-          <input placeholder="ciudad" type="text" ref={cityRef} />
+          <input placeholder="  ciudad" type="text" ref={cityRef} />
           <label>Email:</label>
-          <input placeholder="email" type="email" ref={emailRef} />
+          <input placeholder="  email" type="email" ref={emailRef} />
           <label>Telefóno:</label>
-          <input placeholder="telefóno" type="number" ref={phoneRef} />
+          <input placeholder="  telefóno" type="number" ref={phoneRef} />
           <label>Contraseña:</label>
-          <input placeholder="contraseña" type="password" ref={psdRef} />
-          <label>Repetir Contraseña:</label>
-          <input placeholder="contraseña" type="password" ref={repasswordRef} />
-          <button type="submit">Ingresar</button>
-           Ya tienes una cuenta? <Link to= "/signin/">Ingresar</Link>
+          <input placeholder="  contraseña" type="password" ref={psdRef} />
+          <label>Confirmar contraseña:</label>
+          <input placeholder=" contraseña" type="password" ref={repasswordRef} />
+          <div className="enlace1">
+            Ya tienes una cuenta? <Link to= "/signin/">  Iniciar sesión</Link>
+          </div> 
+          <button className="boton1" type="submit">Registrar</button>
+         
         </form>
+        
       </div>
+ 
     </div>
     </>
   );
