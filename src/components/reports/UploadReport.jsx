@@ -5,7 +5,7 @@ import { auth, db } from "../../firebase";
 import { useUserContext } from "../../context/userContext";
 import { addDoc, collection } from "firebase/firestore";
 import Sidebar from "../dashboard/components/Sidebar";
-
+import "./static/uploadfile.css"
 export default function UploadReport() {
   const { user } = useUserContext();
 
@@ -208,80 +208,84 @@ export default function UploadReport() {
     try {
       data.map(async (d) => {
         await addDoc(collection(db, "municipalities"), {
-            municipio: d["municipio"],
-            indEconomico: d["indEconomico"],
-            indAmbiental: d["indAmbiental"],
-            indInstitucional: d["indInstitucional"],
-            indSocial: d["indSocial"],
-            indGlobalSustentabilidad: d["indGlobalSustentabilidad"],
-            creadoEn: new Date(),
-            creadoPor: user.email,
-          });
+          municipio: d["municipio"],
+          indEconomico: d["indEconomico"],
+          indAmbiental: d["indAmbiental"],
+          indInstitucional: d["indInstitucional"],
+          indSocial: d["indSocial"],
+          indGlobalSustentabilidad: d["indGlobalSustentabilidad"],
+          creadoEn: new Date(),
+          creadoPor: user.email,
+        });
       });
-      console.log("exito")
+      console.log("exito");
     } catch (error) {
-      
       console.log(error);
     }
-
-    
   }
 
   return (
     <>
+    <div className="cont">
+
+      <Sidebar />
+
+      <div className="upload_file container">
+        <form onSubmit={handleSubmit}>
+          <h5>Carga masiva de municipios:: </h5>
+          <p>A continuación puedes cargar los datos de municipios para registarlos en la aplicación</p>
 
 
-    <Sidebar/>
-      <form onSubmit={handleSubmit}>
-        <h5>Upload file: </h5>
-        <input
-          type="file"
-          onChange={(e) => {
-            const file = e.target.files[0];
-            readExcel(file);
-          }}
-        />
-        {console.log(data)}
-        <table className="table mt-4 container-sm ">
-          <thead>
-            <tr>
-              <th>
-                <strong>Municipio</strong>
-              </th>
-              <th>
-                <strong>Índice Economico</strong>
-              </th>
-              <th>
-                <strong>Índice Social</strong>
-              </th>
-              <th>
-                <strong>Índice Ambiental</strong>
-              </th>
-              <th>
-                <strong>Índice Institucional</strong>
-              </th>
-              <th>
-                <strong>Índice Global de Sustentabilidad</strong>
-              </th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {data.map((d) => (
+          <input className="form-control form-control-lg"
+            type="file"
+            onChange={(e) => {
+              const file = e.target.files[0];
+              readExcel(file);
+            }}
+          />
+          {console.log(data)}
+          <table className="table mt-4 container-sm ">
+            <thead>
               <tr>
-                <th>{d["municipio"]}</th>
-                <th>{d["indEconomico"]}</th>
-                <th>{d["indSocial"]}</th>
-                <th>{d["indAmbiental"]}</th>
-                <th>{d["indInstitucional"]}</th>
-                <th>{d["indGlobalSustentabilidad"]}</th>
+                <th>
+                  <strong>Municipio</strong>
+                </th>
+                <th>
+                  <strong>Índice Economico</strong>
+                </th>
+                <th>
+                  <strong>Índice Social</strong>
+                </th>
+                <th>
+                  <strong>Índice Ambiental</strong>
+                </th>
+                <th>
+                  <strong>Índice Institucional</strong>
+                </th>
+                <th>
+                  <strong>Índice Global de Sustentabilidad</strong>
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
 
-        <button type="submit">Subir</button>
-      </form>
+            <tbody>
+              {data.map((d) => (
+                <tr>
+                  <th>{d["municipio"]}</th>
+                  <th>{d["indEconomico"]}</th>
+                  <th>{d["indSocial"]}</th>
+                  <th>{d["indAmbiental"]}</th>
+                  <th>{d["indInstitucional"]}</th>
+                  <th>{d["indGlobalSustentabilidad"]}</th>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          <button type="submit" class="btn btn-warning">Subir</button>
+        </form>
+      </div>
+    </div>
     </>
   );
 }

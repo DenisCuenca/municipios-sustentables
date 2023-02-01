@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useUserContext } from "../../context/userContext";
-import { db } from "../../firebase/index";
-import Sidebar from "./components/Sidebar";
-import PieChart from "./components/charts/BarChart";
+import { useUserContext } from "../../../context/userContext";
+import { db } from "../../../firebase";
+import Sidebar from "./Sidebar";
 import { Bar, Radar, Pie, PolarArea, Line } from "react-chartjs-2";
 // import { ArcElement, Chart } from "chart.js";
-import RadarChart from "./components/charts/RadarChart";
-import "./static/styles/styles.css";
+import "../static/styles/styles.css";
 
 import {
   Chart as ChartJS,
@@ -26,6 +24,7 @@ import {
 
 // firebase functions
 import { collection, query, where, getDocs } from "firebase/firestore";
+import { useSearchParams } from "react-router-dom";
 
 ChartJS.register(
   RadialLinearScale,
@@ -41,7 +40,7 @@ ChartJS.register(
   Title
 );
 
-const Dashboard = () => {
+const TmpMunDash = () => {
   const { user, logoutUser } = useUserContext();
   //
   const [IndData, setIndData] = useState([]);
@@ -54,12 +53,13 @@ const Dashboard = () => {
   //           getDocs(query).then(res => console.log(res))
 
   // }, [])
-
+  const [searchparams] = useSearchParams();
+  console.log("En el tmp", searchparams.get("id"));
   useEffect(() => {
-    (async () => {
+      (async () => {
       const q = query(
         collection(db, "municipalities"),
-        where("municipio", "==", user.displayName)
+        where("municipio", "==", searchparams.get("id"))
       );
       const querySnapshot = await getDocs(q);
       const docs = querySnapshot.docs.map((doc) => {
@@ -109,7 +109,7 @@ const Dashboard = () => {
           <div className="header">
             <h4>DASHBOARD</h4>
             <div className="header-right">
-              <p>{user.displayName}</p>
+              <p>Estas viendo la vista de: {searchparams.get("id")}</p>
               <a href="/signin" onClick={logoutUser}>
                 CERRAR SESIÓN
               </a>
@@ -239,4 +239,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default TmpMunDash;

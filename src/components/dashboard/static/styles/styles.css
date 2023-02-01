@@ -1,0 +1,107 @@
+.indcards {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+
+
+.ind {
+  background-color: #fff;
+  width: 250px;
+  border-radius: 20px;
+
+}
+
+.ind .text{
+    margin: 10px;
+    font-size: 12px;
+}
+
+.fcol{
+    display: flex;
+    justify-content: space-between;
+}
+
+.ind .text .box{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(78, 181, 148);
+    border-radius: 5px;
+}
+
+.ind .text .box:first-child{
+    width: 20px;
+    height: 20px;
+    background-color: #36DA78;
+    border-radius: 5px;
+}
+
+
+.num {
+  font-size: 30px;
+  margin: 0px 20px;
+}
+
+
+.chart-container {
+    background-color: #fff;
+    border-radius: 10px;
+
+}
+
+
+.charts{
+    margin: 30px 10px;
+}
+.charts h5{
+    margin: 10px 0;
+    font-size: small;
+}
+
+
+.line{
+    width: 800px;
+    height:350px;
+    margin: 5px auto;
+    display: grid;
+    place-content: center;
+}
+
+.lastReportData{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.lastReportData div{
+   display: grid;
+   place-items: center;
+    
+   border-radius:10px ;
+   height: 400px;
+}
+
+.lastReportData div .bar{
+    height: 400px;
+
+}
+
+.cont{
+    display: flex;
+}
+
+.header{
+    margin: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+}
+
+.header .header-right{
+    display: flex;
+}
+
+.header .header-right p{
+    margin-right: 20px;
+}
