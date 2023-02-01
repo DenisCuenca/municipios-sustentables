@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useUserContext } from "../../../context/userContext";
-import "./estilo1.css"
+import "./signin.css"
 import { Link, useNavigate } from "react-router-dom";
 
 const Signin = () => {
@@ -41,29 +41,31 @@ const Signin = () => {
   };
 
   return (
-
+    
     <div class="contenedor">
 
       <div className="rectangulo">
 
-        <h1 className="Titulo1">Bienvenido a MUNICIPIOS SUSTENTABLES</h1>
+        <h1 className="Titulo">Bienvenido a MUNICIPIOS SUSTENTABLES</h1>
 
-        <h2 className="Titulo2"> Login </h2>
+        <h2 className="Subtitulo"> Login </h2>
         <form onSubmit={onSubmit}>
 
           <label >Ingresa tu email:</label>
-          <input placeholder="Email" type="email" ref={emailRef} />
+          <input placeholder="  Email" type="email" ref={emailRef} />
           <label >Ingresa tu contraseña:</label>
-          <input placeholder="Password" type="password" ref={psdRef} />
-          <button className="boton" type="submit">Ingresar</button>
+          <input placeholder="  Contraseña" type="password" ref={psdRef} />
+          <div className="enlace">
+            <Link className="l1"to="/signup/">Crear cuenta nueva </Link>
+            <Link className="l1"to="/reset-password/"> ¿Olvidaste tu contraseña? </Link>
+            
+            
+          </div>
+          <button className="boton" type="submit">Iniciar sesión</button>
 
         </form>
       </div>
-          <div className="enlace">
-            <Link className="l1"to="/reset-password/">¿Olvidate tu contraseña?</Link>
-            <Link className="l1"to="/signup/">Crear Cuenta</Link>
-            
-          </div>
+          
 
     </div>
   );
