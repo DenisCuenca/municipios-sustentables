@@ -7,6 +7,9 @@ import Signup from "./components/authentication/signup/Signup";
 import Dashboard from "./components/dashboard/Dashboard";
 import LandingPage from "./components/landing_page/Landing_page";
 import UploadReport from "./components/reports/UploadReport";
+import OldReports from "./components/reports/OldReports";
+import Municipalities from "./components/municipalities/Municipalities";
+import TmpMunDash from "./components/dashboard/components/TmpMunDash";
 
 
 function App() {
@@ -43,6 +46,19 @@ function App() {
     {
       path: "/panel/new-register/",
       element: <UploadReport />,
+    },
+    {
+      path: "/panel/old-registers/",
+      element: <OldReports />,
+    },
+    {
+      path: "/panel/municipalities/",
+      element: <Municipalities />,
+    },
+// temporal
+    {
+      path: "/tmp_mun/view",
+      element: <TmpMunDash />,
     },
   ]);
 

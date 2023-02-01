@@ -1,0 +1,43 @@
+.sidebar{
+    width: 250px;
+    background: #fff;
+    height: 100vh;
+    margin: 10px 5px;
+    border-radius: 10px;
+    position: sticky;
+    padding: 1px;
+    
+}
+
+.sidebar .log h3{
+font-size: 17px;
+width: 50px;
+}
+
+.sidebar .log, .items{
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+.sidebar .items div{
+    padding: 10px 20px;
+    
+    margin: 5px;
+    border-radius: 5px;
+}
+
+
+.sidebar .items div:hover{
+    background-color: #E5F3FF;
+    
+    
+}
+.sidebar .items .link{
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+}
+
+.sidebar .items i{
+   margin-right: 10px;
+}
