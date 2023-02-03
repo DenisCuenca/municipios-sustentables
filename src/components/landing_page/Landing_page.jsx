@@ -4,7 +4,13 @@ import { useUserContext } from "../../context/userContext";
 import { Bar, Radar, Pie, PolarArea, Line } from "react-chartjs-2";
 
 // firebase functions
-import { collection, query, where, getDocs } from "firebase/firestore";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  collectionGroup,
+} from "firebase/firestore";
 import { db } from "../../firebase";
 
 import { useEffect, useState } from "react";
@@ -22,20 +28,23 @@ import {
   BarElement,
   Title,
 } from "chart.js";
-function LandingPage() {
 
-  
+function LandingPage() {
+  const [selectedValue, setSelectedValue] = useState("SANTA ISABEL");
+  const [filter, setFilter] = useState([]);
+
   //
   const [municipalities, setMunicipalities] = useState([]);
 
-  // useEffect(() => {
-  //   const q = query(
-  //           collection(db, "municipalities"),
-  //           where("municipio", "==", user.displayName)
-  //           );
-  //           getDocs(query).then(res => console.log(res))
+  function changedata(mun) {
+    return municipalities.filter((d) => d.municipio === mun);
+  }
 
-  // }, [])
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+
+    setFilter(changedata(event.target.value));
+  };
 
   useEffect(() => {
     (async () => {
@@ -48,6 +57,8 @@ function LandingPage() {
       });
 
       setMunicipalities(docs);
+      setFilter([docs[0]]);
+
       console.log("doxs", docs);
     })();
   }, []);
@@ -289,22 +300,67 @@ function LandingPage() {
 
       <section class="graficas" id="graficas">
         <p class="centroGrafica">GRÁFICAS DE CADA MUNICIPIO</p>
-        <label for="dog-names">Escoja un Municipio:</label>
+        <label for="dog-names" >Escoja un Municipio:</label>
 
-        <select name="dog-names">
-          {municipalities.map((d) => {
+        <select value={selectedValue} onChange={handleChange}>
+          {console.log("currentValuesCombo:", selectedValue)}
+          {municipalities.map((i) => {
             return (
               <>
-               
-                <option value="">{d["municipio"]}</option>
+                <option value={i.municipio}>{i["municipio"]}</option>
               </>
             );
           })}
         </select>
+        {console.log("filter", filter)}
 
+        {filter.map((f) => {
+          const chartData = {
+            labels: [
+              "Índice ambiental",
+              "Índice Social",
+              "Índice economico",
+              "Índice institucional",
+            ],
+            datasets: [
+              {
+                label: "Indices",
+                data: [
+                  f.indAmbiental,
+                  f.indSocial,
+                  f.indEconomico,
+                  f.indInstitucional,
+                ],
 
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(54, 162, 135, 0.2)",
+                  "rgba(255, 206, 86, 0.2)",
+                  "rgba(75, 192, 192, 0.2)",
+                ],
 
+                borderWidth: 7,
+              },
+            ],
+          };
 
+          return (
+            <>
+              <div className="lastReportData  mt-5">
+                <div className="chart-container" style={{ width: "400px" }}>
+                  <h5>GRÁFICA RADAR</h5>
+
+                  <Radar className="radar" data={chartData} />
+                </div>
+
+                <div className="chart-container" style={{ width: "370px" }}>
+                  <h5>GRÁFICA RADIAL</h5>
+                  <PolarArea className="polar" data={chartData} />
+                </div>
+              </div>
+            </>
+          );
+        })}
       </section>
 
       <section class="objetivo" id="objetivo">
