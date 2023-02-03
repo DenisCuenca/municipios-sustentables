@@ -1,3 +1,4 @@
+import userEvent from "@testing-library/user-event";
 import React from "react";
 import { Link } from "react-router-dom";
 import '../static/styles/sidebar.css'
@@ -24,6 +25,9 @@ export default function Sidebar() {
         <i class="fa-regular fa-calendar-plus"></i>
           <Link className="link" to= "/panel/new-register">Nuevo registro</Link>
         </div>
+        {false ?
+        
+        <>
 
         <div className="old_registers">
             <i class="fa-solid fa-list"></i>
@@ -31,10 +35,17 @@ export default function Sidebar() {
           
         </div>
 
-        <div className="Municipios">
-        <i class="fa-solid fa-users-gear"></i>
-        <Link className="link" to= "/panel/municipalities">Municipios</Link>
-        </div>
+
+          <div className="Municipios">
+          <i class="fa-solid fa-users-gear"></i>
+          <Link className="link" to= "/panel/municipalities">Municipios</Link>
+          </div>
+        </>
+      :
+      
+      ""
+      
+      }
       </div>
       </div>
     </>

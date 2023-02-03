@@ -6,14 +6,12 @@ import {
   signOut,
   updateProfile,
   sendPasswordResetEmail,
-  
 } from "firebase/auth";
 
 import { auth, db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { async } from "@firebase/util";
 import { useNavigate } from "react-router-dom";
-
 
 export const UserContext = createContext({});
 
@@ -43,10 +41,11 @@ export const UserContextProvider = ({ children }) => {
   const registerUser = (email, password, name) => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
-      .then(() =>
-        updateProfile(auth.currentUser, {
-          displayName: name,
-        })
+      .then(
+        () =>
+          updateProfile(auth.currentUser, {
+            displayName: name,
+          })
         // .finally(user.sendEmailVerification())
       )
       .then((res) => console.log(res))
@@ -54,17 +53,15 @@ export const UserContextProvider = ({ children }) => {
       .finally(() => setLoading(false));
   };
 
-  async function signInUser (email, password) {
+  async function signInUser(email, password) {
     setLoading(true);
     await signInWithEmailAndPassword(auth, email, password)
       .then((res) => console.log(res))
       .catch((err) => setError(err.code))
       .finally(() => setLoading(false));
-  };
+  }
 
   const logoutUser = () => {
-
-
     // const navigate = useNavigate()
     signOut(auth);
     // navigate("/")
@@ -74,24 +71,20 @@ export const UserContextProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email);
   };
 
-
   async function addDocUser(name, country, city, email, phone) {
     try {
       await setDoc(doc(db, "users", email), {
-      id: email,
-      displayname: name,
-      email,
-          country,
-          city,
-          phone,
-          CreatedAt: new Date()
-        });
-      
+        id: email,
+        displayname: name,
+        email,
+        country,
+        city,
+        phone,
+        CreatedAt: new Date()
+      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    
-         
   }
 
   const contextValue = {
@@ -102,7 +95,7 @@ export const UserContextProvider = ({ children }) => {
     registerUser,
     logoutUser,
     forgotPassword,
-    addDocUser
+    addDocUser,
   };
   return (
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>
