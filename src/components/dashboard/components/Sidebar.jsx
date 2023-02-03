@@ -43,10 +43,10 @@ export default function Sidebar() {
             </Link>
           </div>
 
-          <div className="new_register">
-            <i class="fa-regular fa-calendar-plus"></i>
-            <Link className="link" to="/panel/new-register">
-              Nuevo registro
+          <div className="old_registers">
+            <i class="fa-solid fa-list"></i>
+            <Link className="link" to="/panel/old-registers">
+              Registros antiguos
             </Link>
           </div>
 
@@ -55,13 +55,12 @@ export default function Sidebar() {
               <>
                 {c.isAdmin ? (
                   <>
-                    <div className="old_registers">
-                      <i class="fa-solid fa-list"></i>
-                      <Link className="link" to="/panel/old-registers">
-                        Registros antiguos
+                    <div className="new_register">
+                      <i class="fa-regular fa-calendar-plus"></i>
+                      <Link className="link" to="/panel/new-register">
+                        Nuevo registro
                       </Link>
                     </div>
-
                     <div className="Municipios">
                       <i class="fa-solid fa-users-gear"></i>
                       <Link className="link" to="/panel/municipalities">
