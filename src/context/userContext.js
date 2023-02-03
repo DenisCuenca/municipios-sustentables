@@ -71,20 +71,23 @@ export const UserContextProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email);
   };
 
+
   async function addDocUser(name, country, city, email, phone) {
-    try {
+  
+      
       await setDoc(doc(db, "users", email), {
         id: email,
         displayname: name,
-        email,
-        country,
-        city,
-        phone,
-        CreatedAt: new Date()
+        email: email,
+        country: country,
+        city: city,
+        phone: phone,
+        CreatedAt: new Date(),
+        isAdmin: false
       });
-    } catch (error) {
-      console.log(error);
-    }
+   
+      
+    
   }
 
   const contextValue = {

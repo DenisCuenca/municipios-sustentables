@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import { useUserContext } from "../../../context/userContext";
 import "./signup.css"
 import { Link , useNavigate} from "react-router-dom";
+import { db } from "../../../firebase";
+import { doc, setDoc } from "firebase/firestore";
 const Signup = () => {
 
   const navigate = useNavigate();
@@ -17,7 +19,7 @@ const Signup = () => {
 
   const { registerUser, addDocUser } = useUserContext();
   
-  const onSubmit = (e) => {
+  async function onSubmit (e)  {
     e.preventDefault();
     
     const name = nameRef.current.value;
@@ -31,8 +33,20 @@ const Signup = () => {
     try{
       if (email && name && password && password) {
         registerUser(email,  password,name);
-        addDocUser(name, country, city, email, phone);
-        navigate("/panel")
+        
+        await setDoc(doc(db, "users", email), {
+          id: email,
+          displayname: name,
+          email: email,
+          country: country,
+          city: city,
+          phone: phone,
+          CreatedAt: new Date(),
+          isAdmin: false
+        });
+
+
+        navigate("/signin")
         
       }
 

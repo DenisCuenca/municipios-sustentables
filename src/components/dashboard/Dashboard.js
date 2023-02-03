@@ -42,17 +42,9 @@ ChartJS.register(
 
 const Dashboard = () => {
   const { user, logoutUser } = useUserContext();
-  //
+  
   const [IndData, setIndData] = useState([]);
 
-  // useEffect(() => {
-  //   const q = query(
-  //           collection(db, "municipalities"),
-  //           where("municipio", "==", user.displayName)
-  //           );
-  //           getDocs(query).then(res => console.log(res))
-
-  // }, [])
 
   useEffect(() => {
     (async () => {
@@ -71,33 +63,7 @@ const Dashboard = () => {
     })();
   }, []);
 
-  // function Data (){
-
-  //   // console.log("con botin", IndData)
-  //
-
-  // }
-
-  //  async function getData() {
-
-  //     const q =  query(
-  //       collection(db, "municipalities"),
-  //       where("municipio", "==", user.displayName)
-  //       );
-  //     const querySnapshot =  await getDocs(q);
-  //     const docs = await  querySnapshot.docs.map((doc) => {
-  //       const data = doc.data();
-  //       data.id = doc.id;
-  //       return data;
-  //     });
-
-  //     IndData = docs[0];
-
-  //       // console.log("datos desde dash", docs);
-
-  //     }
-
-  // getData();
+  
 
   return (
     <>
@@ -115,7 +81,7 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* <p>Email: {municipality.email}</p> */}
+          
           <br></br>
 
           {IndData.map((i) => {
@@ -206,9 +172,9 @@ const Dashboard = () => {
                 </div>
                 <div className="charts">
                   <h4>Muestras Gráficas:</h4>
-                  <div className="chart-container line">
-                    
-                    <Line data={chartData} />
+                  <div className="chart-container line"  style={{ width: "780px" }}>
+                    <h5>GRÁFICA LINEAL: ÚLTIMO REGISTRO</h5>
+                    <Line data={chartData} style={{ height: "340px" }}/>
                   </div>
 
                   <div className="lastReportData">
@@ -218,9 +184,9 @@ const Dashboard = () => {
                       <Radar className="radar" data={chartData} />
                     </div>
 
-                    <div className="chart-container" style={{ width: "400px" }}>
+                    <div className="chart-container" style={{ width: "350px" }}>
                     <h5>GRÁFICA RADIAL: ÚLTIMO REGISTRO</h5>
-                      <PolarArea className="polar" data={chartData} />;
+                      <PolarArea className="polar" data={chartData} />
                     </div>
 
                     <div className="chart-container" style={{ width: "400px" }}>
