@@ -5,7 +5,6 @@ import Sidebar from "./components/Sidebar";
 import PieChart from "./components/charts/BarChart";
 import { Bar, Radar, Pie, PolarArea, Line } from "react-chartjs-2";
 // import { ArcElement, Chart } from "chart.js";
-import RadarChart from "./components/charts/RadarChart";
 import "./static/styles/styles.css";
 
 import {
