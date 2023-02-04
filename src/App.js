@@ -10,6 +10,7 @@ import UploadReport from "./components/reports/UploadReport";
 import OldReports from "./components/reports/OldReports";
 import Municipalities from "./components/municipalities/Municipalities";
 import TmpMunDash from "./components/dashboard/components/TmpMunDash";
+import  Toast, {toast, Toaster}  from "react-hot-toast";
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
   const islogged = "/panel";
   const notlogged = "/signin";
-  
+
 
   const router = createBrowserRouter([
    
@@ -68,9 +69,12 @@ function App() {
     <div className="App">
 
       {/* mostrar error de firebase */}
-      {error && <p className="error">{error}</p>} 
-      <RouterProvider router={router}/>
+      {/* <Toaster position="top-left"/> */}
 
+    
+      {console.log("deniscunca", error)}
+
+      <RouterProvider router={router}/>
       
     </div>
   );

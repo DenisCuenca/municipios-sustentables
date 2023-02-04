@@ -3,13 +3,17 @@ import { useUserContext } from "../../../context/userContext";
 import "./signin.css"
 import { Link, useNavigate } from "react-router-dom";
 
+import toast, { Toaster } from 'react-hot-toast';
+
+
 const Signin = () => {
   const emailRef = useRef();
   const psdRef = useRef();
 
   const navigate = useNavigate()
 
-  const { signInUser, forgotPassword } = useUserContext();
+  const { signInUser, redRoute } = useUserContext();
+
 
   async function onSubmit(e) {
 
@@ -20,29 +24,26 @@ const Signin = () => {
 
     if (email && password) {
 
-      try {
+      
         await signInUser(email, password);
-        navigate("/panel");
+        navigate(redRoute);
+      
+      
+      
 
-      } catch (err) {
-        navigate("/signin");
-
-      }
+      
     }
 
   }
 
 
 
-  const forgotPasswordHanddler = () => {
-    const email = emailRef.current.value;
-
-    if (email) forgotPassword(email).then(() => (emailRef.current.value = ""));
-  };
 
   return (
     
     <div class="contenedor">
+
+      <Toaster/>
 
       <div className="rectangulo">
 

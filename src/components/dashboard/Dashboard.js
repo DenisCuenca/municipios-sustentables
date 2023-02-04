@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useUserContext } from "../../context/userContext";
 import { db } from "../../firebase/index";
 import Sidebar from "./components/Sidebar";
+import { useNavigate } from "react-router-dom";
 import PieChart from "./components/charts/BarChart";
 import { Bar, Radar, Pie, PolarArea, Line } from "react-chartjs-2";
 // import { ArcElement, Chart } from "chart.js";
@@ -25,6 +26,7 @@ import {
 
 // firebase functions
 import { collection, query, where, getDocs } from "firebase/firestore";
+import { Navigate } from "react-router-dom";
 
 ChartJS.register(
   RadialLinearScale,
@@ -41,10 +43,10 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
-  const { user, logoutUser } = useUserContext();
-  
-  const [IndData, setIndData] = useState([]);
+  const { user, logoutUser, redRoute } = useUserContext();
 
+  const [IndData, setIndData] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(() => {
     (async () => {
@@ -63,8 +65,6 @@ const Dashboard = () => {
     })();
   }, []);
 
-  
-
   return (
     <>
       <div className="cont">
@@ -75,13 +75,18 @@ const Dashboard = () => {
             <h4>DASHBOARD</h4>
             <div className="header-right">
               <p>{user.displayName}</p>
-              <a href="/signin" onClick={logoutUser}>
+              <a
+                href="/signin"
+                onClick={() => {
+                  logoutUser();
+                  navigate(redRoute);
+                }}
+              >
                 CERRAR SESIÓN
               </a>
             </div>
           </div>
 
-          
           <br></br>
 
           {IndData.map((i) => {
@@ -172,9 +177,12 @@ const Dashboard = () => {
                 </div>
                 <div className="charts">
                   <h4>Muestras Gráficas:</h4>
-                  <div className="chart-container line"  style={{ width: "780px" }}>
+                  <div
+                    className="chart-container line"
+                    style={{ width: "780px" }}
+                  >
                     <h5>GRÁFICA LINEAL: ÚLTIMO REGISTRO</h5>
-                    <Line data={chartData} style={{ height: "340px" }}/>
+                    <Line data={chartData} style={{ height: "340px" }} />
                   </div>
 
                   <div className="lastReportData">
@@ -185,12 +193,12 @@ const Dashboard = () => {
                     </div>
 
                     <div className="chart-container" style={{ width: "350px" }}>
-                    <h5>GRÁFICA RADIAL: ÚLTIMO REGISTRO</h5>
+                      <h5>GRÁFICA RADIAL: ÚLTIMO REGISTRO</h5>
                       <PolarArea className="polar" data={chartData} />
                     </div>
 
                     <div className="chart-container" style={{ width: "400px" }}>
-                    <h5>ÍNDICES ÚLTIMO REGISTRO</h5>
+                      <h5>ÍNDICES ÚLTIMO REGISTRO</h5>
                       <Bar className="bar" data={chartData} />
                     </div>
                   </div>
