@@ -72,7 +72,7 @@ function LandingPage() {
     <div className="conte">
       <header class="cabeceraPrincipal">
         <section class="logotipo">
-          <img src={require("./images/logo.jpg")} />
+          <img src={require("./images/landing_logo_dark.png")} />
         </section>
         <nav class="menuPrincipal1">
           <a href="#importantes">Importantes</a>
@@ -300,7 +300,7 @@ function LandingPage() {
 
       <section class="graficas" id="graficas">
         <p class="centroGrafica">GRÁFICAS DE CADA MUNICIPIO</p>
-        <label for="dog-names" >Escoja un Municipio:</label>
+        <label for="dog-names">Escoja un Municipio:</label>
 
         <select value={selectedValue} onChange={handleChange}>
           {console.log("currentValuesCombo:", selectedValue)}
@@ -333,10 +333,10 @@ function LandingPage() {
                 ],
 
                 backgroundColor: [
-                  "rgba(255, 99, 132, 0.2)",
-                  "rgba(54, 162, 135, 0.2)",
-                  "rgba(255, 206, 86, 0.2)",
-                  "rgba(75, 192, 192, 0.2)",
+                  "rgba(255, 99, 132, 0.3)",
+                  "rgba(54, 162, 135, 0.3)",
+                  "rgba(255, 206, 86, 0.3)",
+                  "rgba(75, 192, 192, 0.3)",
                 ],
 
                 borderWidth: 7,
@@ -354,6 +354,11 @@ function LandingPage() {
                 </div>
 
                 <div className="chart-container" style={{ width: "370px" }}>
+                  <h5>GRÁFICA BARRAS</h5>
+                  <Bar className="bar" data={chartData} />
+                </div>
+
+                <div className="chart-container" style={{ width: "340px" }}>
                   <h5>GRÁFICA RADIAL</h5>
                   <PolarArea className="polar" data={chartData} />
                 </div>

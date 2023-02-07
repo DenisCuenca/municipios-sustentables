@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from "../dashboard/components/Sidebar";
 
-import { useUserContext } from "../../context/userContext";
 import { db } from "../../firebase";
 
-
+import { useUserContext } from "../../context/userContext";
 // firebase functions
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { createSearchParams, Link, useNavigate } from "react-router-dom";
 
 export default function Municipalities() {
-
+    const {user} = useUserContext();
 
     //
+
+    
     const [IndData, setIndData] = useState([]);
   
     // useEffect(() => {
@@ -61,7 +62,7 @@ export default function Municipalities() {
         <Sidebar />
         <div className="container">
           <h3>Registros realizados:</h3>
-
+          <p>{user.displayName}</p>
           <table className="table">
             <thead>
               <tr>

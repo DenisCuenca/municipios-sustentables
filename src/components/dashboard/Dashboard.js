@@ -46,7 +46,7 @@ const Dashboard = () => {
   const { user, logoutUser, redRoute } = useUserContext();
 
   const [IndData, setIndData] = useState([]);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     (async () => {
@@ -76,10 +76,9 @@ const Dashboard = () => {
             <div className="header-right">
               <p>{user.displayName}</p>
               <a
-                href="/signin"
+                href="/"
                 onClick={() => {
                   logoutUser();
-                  navigate(redRoute);
                 }}
               >
                 CERRAR SESIÓN
@@ -175,18 +174,58 @@ const Dashboard = () => {
                     </div>
                   </section>
                 </div>
-                <div className="charts">
+                <div className="charts  bg-error">
                   <h4>Muestras Gráficas:</h4>
+
+                  <div className="d-flex" style={{justifyContent: "center"}} >
                   <div
-                    className="chart-container line"
-                    style={{ width: "780px" }}
-                  >
-                    <h5>GRÁFICA LINEAL: ÚLTIMO REGISTRO</h5>
-                    <Line data={chartData} style={{ height: "340px" }} />
+                      className="table-container"
+                      style={{ background: "#fff" , marginRight: "5px", borderRadius: "10px", height: "200px", width: "400px"}}
+                    >
+                      <h5 style={{marginLeft: "10px"}}>HISTORICO</h5>
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th style={{fontSize: "13px"}}>Ind Amb</th>
+                            <th style={{fontSize: "13px"}}>Ind Social</th>
+                            <th style={{fontSize: "13px"}}>Ind Inst</th>
+                            <th style={{fontSize: "13px"}}>Ind Eco</th>
+                            <th style={{fontSize: "13px"}}>Ind Global</th>
+                            <th style={{fontSize: "13px"}}>Creado en:</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td  style={{fontSize: "13px"}}>{i.indAmbiental.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.indSocial.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.indInstitucional.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.indEconomico.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.indGlobalSustentabilidad.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.creadoEn.toDate().toDateString()}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div
+                      className="chart-container line"
+                      style={{
+                        width: "850px",
+                        height: "400px",
+                        display: "grid",
+                        alignItems: "center",
+                      }}
+                    >
+                      
+                      <div className="m-auto" style={{ height: "340px", width: "600px"}}>
+                        <h5>GRÁFICA LINEAL: ÚLTIMO REGISTRO</h5>
+                        <Line className="" data={chartData}  />
+                      </div>
+                    </div>
                   </div>
 
                   <div className="lastReportData">
-                    <div className="chart-container" style={{ width: "400px" }}>
+                    <div className="chart-container" style={{ width: "370px" }}>
                       <h5>GRÁFICA RADAR: ÚLTIMO REGISTRO</h5>
 
                       <Radar className="radar" data={chartData} />

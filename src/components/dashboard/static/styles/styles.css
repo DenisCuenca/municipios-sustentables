@@ -60,17 +60,8 @@ h5{
 
 }
 
-.line h5{
-    
-}
 
-.line{
-    width: 800px;
-    height:400px;
-    margin: 5px auto;
-    display: grid;
-    place-content: center;
-}
+
 
 .lastReportData{
     margin-top: 25px;
@@ -109,3 +100,4 @@ h5{
 .header .header-right p{
     margin-right: 20px;
 }
+
