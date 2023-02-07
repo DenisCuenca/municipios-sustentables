@@ -61,7 +61,7 @@ export const UserContextProvider = ({ children }) => {
         console.log(res);
         setRedRoute("/panel");
       })
-      .catch((err) => {
+      .catch((err) => { 
         Toast.error(err.code);
         setRedRoute("/signin");
       })
@@ -70,7 +70,7 @@ export const UserContextProvider = ({ children }) => {
 
   const logoutUser = () => {
     
-    setRedRoute("/signin");
+    setRedRoute("/");
     signOut(auth);
     
   };

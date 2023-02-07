@@ -31,7 +31,7 @@ export default function Sidebar() {
     <>
       <div className="sidebar">
         <div className="log">
-          <h3>Municipos Sustentables</h3>
+        <img src={require("../../landing_page/images/landing_logo_dark.png")} />
           {/* <img src={require("./../static/images/logo.png")} /> */}
         </div>
 
@@ -47,6 +47,13 @@ export default function Sidebar() {
             <i class="fa-solid fa-list"></i>
             <Link className="link" to="/panel/old-registers">
               Registros antiguos
+            </Link>
+          </div>
+
+          <div className="old_registers">
+            <i class="fa-solid fa-list"></i>
+            <Link className="link" to="/panel/create-new-report">
+              Participar en nuevo registro
             </Link>
           </div>
 

@@ -110,7 +110,7 @@ const TmpMunDash = () => {
             <h4>DASHBOARD</h4>
             <div className="header-right">
               <p>Estas viendo la vista de: {searchparams.get("id")}</p>
-              <a href="/signin" onClick={logoutUser}>
+              <a href="/" onClick={logoutUser}>
                 CERRAR SESIÓN
               </a>
             </div>
@@ -205,27 +205,70 @@ const TmpMunDash = () => {
                     </div>
                   </section>
                 </div>
-                <div className="charts">
+                <div className="charts  bg-error">
                   <h4>Muestras Gráficas:</h4>
-                  <div className="chart-container line">
-                    
-                    <Line data={chartData} />
+
+                  <div className="d-flex" style={{justifyContent: "center"}} >
+                  <div
+                      className="table-container"
+                      style={{ background: "#fff" , marginRight: "5px", borderRadius: "10px", height: "200px", width: "400px"}}
+                    >
+                      <h5 style={{marginLeft: "10px"}}>HISTORICO</h5>
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th style={{fontSize: "13px"}}>Ind Amb</th>
+                            <th style={{fontSize: "13px"}}>Ind Social</th>
+                            <th style={{fontSize: "13px"}}>Ind Inst</th>
+                            <th style={{fontSize: "13px"}}>Ind Eco</th>
+                            <th style={{fontSize: "13px"}}>Ind Global</th>
+                            <th style={{fontSize: "13px"}}>Creado en:</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <td  style={{fontSize: "13px"}}>{i.indAmbiental.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.indSocial.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.indInstitucional.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.indEconomico.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.indGlobalSustentabilidad.toFixed(2)}</td>
+                            <td  style={{fontSize: "13px"}}>{i.creadoEn.toDate().toDateString()}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div
+                      className="chart-container line"
+                      style={{
+                        width: "850px",
+                        height: "400px",
+                        display: "grid",
+                        alignItems: "center",
+                      }}
+                    >
+                      
+                      <div className="m-auto" style={{ height: "340px", width: "600px"}}>
+                        <h5>GRÁFICA LINEAL: ÚLTIMO REGISTRO</h5>
+                        <Line className="" data={chartData}  />
+                      </div>
+                    </div>
                   </div>
 
                   <div className="lastReportData">
-                    <div className="chart-container" style={{ width: "400px" }}>
+                    <div className="chart-container" style={{ width: "370px" }}>
                       <h5>GRÁFICA RADAR: ÚLTIMO REGISTRO</h5>
 
                       <Radar className="radar" data={chartData} />
                     </div>
 
-                    <div className="chart-container" style={{ width: "400px" }}>
-                    <h5>GRÁFICA RADIAL: ÚLTIMO REGISTRO</h5>
-                      <PolarArea className="polar" data={chartData} />;
+                    <div className="chart-container" style={{ width: "350px" }}>
+                      <h5>GRÁFICA RADIAL: ÚLTIMO REGISTRO</h5>
+                      <PolarArea className="polar" data={chartData} />
                     </div>
 
                     <div className="chart-container" style={{ width: "400px" }}>
-                    <h5>ÍNDICES ÚLTIMO REGISTRO</h5>
+                      <h5>ÍNDICES ÚLTIMO REGISTRO</h5>
                       <Bar className="bar" data={chartData} />
                     </div>
                   </div>

@@ -46,12 +46,15 @@ body{
 	text-decoration: none;
 	padding: 2px 20px;
 	transition-duration: 0.4s;
-	color: #000000;	
+	color: #000;	
 	border-radius: 10px;
   font-size: 17px;
+  font-weight: 300;
+  
+  border-radius: 20px;
 }
 .menuPrincipal1 a:hover{
-	background-color: #144759;
+	background-color: #538b9f;
 	color: #fff;
 }
 
@@ -91,6 +94,7 @@ body{
     text-shadow: 1px 1px 3px  black, 0 0 25px black;
     margin-left: 40px;
     text-align: left;  
+    font-weight: 500;
 }
 .textoPequeño{
     position: absolute;
@@ -100,6 +104,7 @@ body{
     font-size: 23px; 
     margin-left: 40px;
     text-align: left;
+    font-weight: 200;
 }
 .botonesPortada{
     position: absolute;
@@ -167,7 +172,7 @@ body{
 }
 .container .card p{
     padding: 0 1rem;
-    font-weight: 20;
+    font-weight: 200;
     text-align: left;
     font-size: 14px; 
 }
@@ -238,23 +243,35 @@ body{
 .conte .graficas{
 	grid-area: graficas;
 	background-color: #ffffff;
-  height: 750px;
+  height: 620px;
   position: relative;
 }
 .conte .graficas .centroGrafica {
 	text-align: center;
 	font-size: 30px;
-	padding: 2em ;
+	margin: 40px;
 	color: black;
   font-family: 'Poppins';
   font-weight: 500;
 }
 .conte label{
-	padding: 0px 30px;
-  font-size: 20px;
+	margin: 0px 180px;
+  
+}
+.conte select{
+	margin: 0px -160px;
+  
+}
+.graficas p{
+	margin-bottom: -40px;
+  font-weight: 900;
 }
 
 
+.chart-container{
+  display: flex;
+  align-content: center;
+}
 
 /*---------------------------------------------*/
 /*               Objetivo               */
